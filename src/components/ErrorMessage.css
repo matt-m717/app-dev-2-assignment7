@@ -1,0 +1,21 @@
+.error-container {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #666;
+}
+
+.error-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.error-container h3 {
+    color: #ff6b6b;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.error-container p {
+    font-size: 1.1rem;
+    color: #666;
+}
