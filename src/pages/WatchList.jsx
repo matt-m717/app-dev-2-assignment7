@@ -1,24 +1,24 @@
 import MovieGrid from "../components/MovieGrid";
-import { useFavorites } from "../contexts/FavoritesContext";
+import { useWatchList } from "../contexts/MovieContext";
 
-function Favorites() {
-    const { favoriteMovies, removeFromFavorites } = useFavorites();
+function WatchList() {
+    const { watchList, removeFromWatchList } = useWatchList();
     return (
         <main className="main-content">
             <div className="content-header">
-                <h2>My Favorites</h2>
-                <p>Your saved movies collection</p>
+                <h2>My Watchlist</h2>
+                <p>Movies you plan to watch</p>
             </div>
-            {favoriteMovies.length > 0 ? (
+            {watchList.length > 0 ? (
                 <MovieGrid
-                    movies={favoriteMovies}
+                    movies={watchList}
                     renderButton={movie => {
                         return (
                             <button
                                 className="favorite-button favorited"
-                                onClick={() => removeFromFavorites(movie.id)}
+                                onClick={() => removeFromWatchList(movie.id)}
                             >
-                                ♡ Remove from Favorites
+                                ✖ Remove from Watchlist
                             </button>
                         );
                     }}
@@ -26,8 +26,8 @@ function Favorites() {
             ) : (
                 <div className="empty-state">
                     <p>
-                        No favorite movies yet. Start adding some from the home
-                        page!
+                        Your watchlist is empty. Add movies from the home page
+                        to get started!
                     </p>
                 </div>
             )}
@@ -35,4 +35,4 @@ function Favorites() {
     );
 }
 
-export default Favorites;
+export default WatchList;

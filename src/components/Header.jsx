@@ -29,6 +29,9 @@ const Header = ({ onSearch }) => {
                     <Link to="/favorites" className="nav-link">
                         Favorites
                     </Link>
+                    <Link to="/watchlist" className="nav-link">
+                        Watchlist
+                    </Link>
                 </nav>
                 <div className="search-container">
                     <input

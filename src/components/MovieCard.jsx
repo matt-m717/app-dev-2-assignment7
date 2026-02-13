@@ -1,4 +1,4 @@
-function MovieCard({ movie, onFavorite, isFavorite }) {
+function MovieCard({ movie, buttons }) {
     return (
         <div className="movie-card">
             <div className="movie-poster">
@@ -21,14 +21,7 @@ function MovieCard({ movie, onFavorite, isFavorite }) {
                         {movie.release_date.substring(0, 4)}
                     </span>
                 </div>
-                <button
-                    className="favorite-button"
-                    onClick={() => onFavorite(movie)}
-                >
-                    {isFavorite
-                        ? "♡ Remove from Favorites"
-                        : "♡ Add to Favorites"}
-                </button>
+                {buttons}
             </div>
         </div>
     );
